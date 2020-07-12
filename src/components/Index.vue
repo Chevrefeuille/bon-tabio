@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     This is a Buefy button :
-    <b-button type="is-primary">Primary</b-button>
+    <b-button type="is-primary">My beautiful button</b-button>
   </div>
 </template>
 
