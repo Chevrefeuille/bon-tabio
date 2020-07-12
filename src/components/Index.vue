@@ -4,6 +4,7 @@
     This is a Buefy button :
     <b-button type="is-primary">My beautiful button</b-button>
     <b-button type="is-primary">My second beautiful button</b-button>
+    <b-button type="is-primary">My third beautiful button</b-button>
   </div>
 </template>
 
