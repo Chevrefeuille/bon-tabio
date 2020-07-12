@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Photos from '../views/Photos.vue'
+import Recipes from '../views/Recipes.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +11,16 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/photos',
+    name: 'Photos',
+    component: Photos
+  },
+  {
+    path: '/recipes',
+    name: 'Recipes',
+    component: Recipes
   },
   {
     path: '/about',
