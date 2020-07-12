@@ -1,20 +1,19 @@
 <template>
   <div id="app">
-    <Index />
+    <Navbar />
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Index from './components/Index.vue'
-
+import Navbar from '@/components/Navbar.vue'
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Index
+    Navbar
   }
 }
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
