@@ -46,6 +46,6 @@ export default {
 <style scoped>
 .recipes {
   padding-left: 20px;
-  padding-right: 0px;
+  padding-right: 20px;
 }
 </style>
