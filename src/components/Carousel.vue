@@ -1,5 +1,5 @@
 <template>
-  <div class="home">    
+  <div class="carousel">    
     <b-carousel :indicator-inside="false">
       <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
         <span class="image">
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Carousel',
   data(){
     return {
       carousels: [
