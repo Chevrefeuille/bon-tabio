@@ -8,11 +8,14 @@ module.exports = {
   siteName: 'Bon Tabio',
   plugins: [
     {
-      use: '@gridsome/transformer-yaml',
+      use: '@gridsome/source-filesystem',
       options: {
-        path: 'assets/recipes/*.yaml',
+        path: 'content/recipes/*.yaml',
         typeName: 'Recipe'
       }
     }
-  ]
+  ],
+  templates: {
+    Recipe: '/recipe/:id',
+  }
 }
