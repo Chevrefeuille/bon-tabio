@@ -2,7 +2,7 @@
   <Layout>
     <div>
       <div v-for="edge in $page.allRecipe.edges" :key="edge.node.id">
-        <h2>{{ edge.node.data[0].name }}</h2>
+        <g-link :to="edge.node.path">{{ edge.node.data[0].name }}</g-link>
       </div>
     </div>
   </Layout>
@@ -14,6 +14,7 @@ query {
     edges {
       node {
         id
+        path
         data {
           name
         }

@@ -1,7 +1,9 @@
 <template>
-  <div>
-   {{ $page.recipe.data[0].name }}
-  </div>
+  <Layout>
+    <div>
+      {{ $page.recipe.data[0].name }}
+    </div>
+  </Layout>
 </template>
 
 <page-query>
