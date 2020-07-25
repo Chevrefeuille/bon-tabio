@@ -10,5 +10,3 @@ steps:
   action: Prepare the chicken
 - name: step 2
   action: Stir the chicken
-- name: Recipe 2
-  image: url/to/image
