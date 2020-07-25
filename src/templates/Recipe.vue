@@ -1,7 +1,9 @@
 <template>
   <Layout>
-    <div>
-      {{ $page.recipe.data[0].name }}
+    <div class="ingredients">
+      {{ $page.recipe.name }}
+    </div>
+    <div class="steps">
     </div>
   </Layout>
 </template>
@@ -9,7 +11,16 @@
 <page-query>
 query ($id: ID!) {
   recipe(id: $id) {
-    data {name}
+    name
+    image
+    ingredients {
+      name
+      quantity
+    }
+    steps {
+      name
+      action
+    }
   }
 }
 </page-query>

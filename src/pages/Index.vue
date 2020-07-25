@@ -1,6 +1,5 @@
 <template>
   <Layout>
-    Hello
     <Carousel />
   </Layout>
 </template>
