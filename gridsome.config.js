@@ -16,6 +16,6 @@ module.exports = {
     }
   ],
   templates: {
-    Recipe: '/recipe/:id',
+    Recipe: '/recipe/:data__0__name',
   }
 }
