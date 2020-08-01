@@ -7,7 +7,7 @@
       <div
         v-for="(ingredient, i) in $page.recipe.ingredients"
         :key="i"
-      >{{ ingredient.name }} : {{ ingredient.quantity }}</div>
+      >{{ ingredient.name }} :-> {{ ingredient.quantity }}</div>
     </div>
     <div class="steps">
       Steps
