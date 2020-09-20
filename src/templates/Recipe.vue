@@ -12,6 +12,12 @@
           :key="i"
         >{{ ingredient.name }} : {{ scaleQuantity(ingredient.quantity) }} {{ ingredient.unit }}</li>
       </ul>
+      <ul class="ingredients">
+        <li
+          v-for="(ingredient, i) in $page.recipe.otherIngredients"
+          :key="i"
+        >{{ ingredient.name }}</li>
+      </ul>
     </div>
     <div class="box">
       <h3>Steps</h3>
@@ -54,6 +60,9 @@ query ($id: ID!) {
       name
       quantity
       unit
+    }
+    otherIngredients {
+      name
     }
     steps {
       name
