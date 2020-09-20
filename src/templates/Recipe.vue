@@ -4,7 +4,7 @@
     <h2>{{ $page.recipe.name }}</h2>
     <div class="ingredients">
       <h3>Ingredients</h3>
-      <ul>
+      <ul class="ingredients">
         <li
           v-for="(ingredient, i) in $page.recipe.ingredients"
           :key="i"
@@ -13,7 +13,9 @@
     </div>
     <div class="steps">
       <h3>Steps</h3>
-      <div v-for="(step, i) in $page.recipe.steps" :key="i">{{ step.name }} : {{ step.action }}</div>
+      <ul class="steps">
+        <li v-for="(step, i) in $page.recipe.steps" :key="i">{{ step.action }}</li>
+      </ul>
     </div>
   </Layout>
 </template>
