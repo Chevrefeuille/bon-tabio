@@ -1,17 +1,22 @@
 <template>
   <Layout>
-    <div>
-      <div class="columns is-multiline is-mobile">
-        <div class="column is-one-third" v-for="edge in $page.allRecipe.edges" :key="edge.node.id">
+    <!-- <img src="../assets/image_1.jpg"> -->
+    <!-- <section
+      class="hero is-fullheight recipes"
+    > -->
+      <div class="columns is-multiline is-mobile is-centered recipes">
+        <div class="column is-4" v-for="edge in $page.allRecipe.edges" :key="edge.node.id">
           <article class="tile is-child box">
-            <p class="title"><g-link :to="edge.node.path">{{ edge.node.name }}</g-link></p>
+            <p class="title">
+              <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
+            </p>
             <figure class="image is-square">
-              <img :src="edge.node.image">
+              <img :src="edge.node.image" />
             </figure>
           </article>
         </div>
       </div>
-    </div>
+    <!-- </section> -->
   </Layout>
 </template>
 <page-query>
@@ -33,4 +38,10 @@ query {
 img {
   object-fit: cover;
 }
+
+.recipes {
+  background-image: url('../assets/image_2.jpg');
+  background-size: contain;
+}
 </style>
+
