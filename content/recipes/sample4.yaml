@@ -1,0 +1,12 @@
+name: sample4
+image: https://www.jocooks.com/wp-content/uploads/2019/10/coconut-chicken-curry-1-10.jpg
+ingredients:
+- name: chicken
+  quantity: 200g
+- name: curry powder
+  quantity: 1 tea spoon
+steps:
+- name: step 1
+  action: Prepare the chicken
+- name: step 2
+  action: Stir the chicken
