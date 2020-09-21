@@ -3,10 +3,10 @@
     <!-- <img src="../assets/image_1.jpg"> -->
     <!-- <section
       class="hero is-fullheight recipes"
-    > -->
-      <div class="columns is-multiline is-mobile is-centered recipes">
-        <div class="column is-1"></div>
-        <div class="column is-3" v-for="edge in $page.allRecipe.edges" :key="edge.node.id">
+    >-->
+    <div class="recipe-main-container">
+      <div class="columns is-multiline is-mobile is-centered recipe-grid">
+        <div class="column is-4" v-for="edge in $page.allRecipe.edges" :key="edge.node.id">
           <article class="tile is-child box">
             <p class="title">
               <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
@@ -16,14 +16,30 @@
             </figure>
           </article>
         </div>
-        <div class="column is-1"></div>
       </div>
+      <Pager :info="$page.allRecipe.pageInfo"/>
+    </div>
     <!-- </section> -->
   </Layout>
 </template>
+
+<script>
+import { Pagerl } from "gridsome";
+
+export default {
+  components: {
+    Pager,
+  },
+};
+</script>
+
 <page-query>
-query {
-  allRecipe {
+query ($page: Int) {
+  allRecipe(perPage: 9, page: $page) @paginate {
+    pageInfo {
+      totalPages
+      currentPage
+    }
     edges {
       node {
         id
@@ -41,9 +57,11 @@ img {
   object-fit: cover;
 }
 
-.recipes {
-  background-image: url('../assets/image_9.jpg');
+.recipe-main-container {
+  background-image: url("../assets/image_9.jpg");
   background-size: contain;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 </style>
 
