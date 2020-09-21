@@ -5,7 +5,8 @@
       class="hero is-fullheight recipes"
     > -->
       <div class="columns is-multiline is-mobile is-centered recipes">
-        <div class="column is-4" v-for="edge in $page.allRecipe.edges" :key="edge.node.id">
+        <div class="column is-1"></div>
+        <div class="column is-3" v-for="edge in $page.allRecipe.edges" :key="edge.node.id">
           <article class="tile is-child box">
             <p class="title">
               <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
@@ -15,6 +16,7 @@
             </figure>
           </article>
         </div>
+        <div class="column is-1"></div>
       </div>
     <!-- </section> -->
   </Layout>
@@ -40,7 +42,7 @@ img {
 }
 
 .recipes {
-  background-image: url('../assets/image_2.jpg');
+  background-image: url('../assets/image_9.jpg');
   background-size: contain;
 }
 </style>
