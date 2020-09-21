@@ -8,8 +8,32 @@ import 'buefy/dist/buefy.css'
 
 import '~/assets/styles.css'
 
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+// internal icons
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+
+library.add(fas);
+
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
-  Vue.use(Buefy)
+  Vue.component('vue-fontawesome', FontAwesomeIcon);
+  Vue.use(Buefy, {
+    defaultIconComponent: "vue-fontawesome",
+    defaultIconPack: "fas",
+    customIconPacks: {
+      fas: {
+        sizes: {
+          default: "lg",
+          "is-small": "1x",
+          "is-medium": "2x",
+          "is-large": "3x"
+        },
+        iconPrefix: ""
+      }
+    }
+  });
   Vue.component('Layout', DefaultLayout)
 }
