@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { Pagerl } from "gridsome";
+import { Pager } from "gridsome";
 
 export default {
   components: {
@@ -56,7 +56,6 @@ query ($page: Int) {
 img {
   object-fit: cover;
 }
-
 .recipe-main-container {
   background-image: url("../assets/image_9.jpg");
   background-size: contain;
