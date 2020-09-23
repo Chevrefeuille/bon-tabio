@@ -5,7 +5,6 @@
         <b-navbar-item tag="g-link" :to="{ path: '/' }">
           <img
             src="../assets/logo1_t.png"
-            alt="Lightweight UI components for Vue.js based on Bulma"
           />
         </b-navbar-item>
       </template>

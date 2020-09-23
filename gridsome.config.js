@@ -6,6 +6,8 @@
 
 module.exports = {
   siteName: 'Bon Tabio',
+  siteUrl: 'https://Chevrefeuille.github.io',
+  pathPrefix: '/adoseri',
   plugins: [
     {
       use: '@gridsome/source-filesystem',

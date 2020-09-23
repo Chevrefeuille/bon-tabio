@@ -6,7 +6,7 @@
       </div>
       <div class="container images">
         <figure class="is-clickable">
-          <img src="../assets/shiba.jpg" />
+          <!-- <img src="../assets/shiba.jpg" /> -->
         </figure>
       </div>
     </section>
