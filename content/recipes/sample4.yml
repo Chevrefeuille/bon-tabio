@@ -1,20 +1,18 @@
-name: sample4
-image: https://www.jocooks.com/wp-content/uploads/2019/10/coconut-chicken-curry-1-10.jpg
+name: Tonkatsu
+image: /uploads/tonkatsu.jpg
 amount:
-  quantity: 4
-  unit: balls
+  quantity: cutlet
+  unit: 1
 ingredients:
-- name: tuna
-  quantity: 1
-  unit: can
-- name: japanese rice
-  quantity: 200
-  unit: g
+  - name: pork
+    quantity: 1
+    unit: cutlet
+  - name: bread crumbs (panko)
+    quantity: 100
+    unit: g
 otherIngredients:
-- name: salt
-- name: pepper
+  - name: salt
+  - name: pepper
 steps:
-- name: step 1
-  action: Prepare the chicken
-- name: step 2
-  action: Stir the chicken
+  - name: Step 1
+    action: Dip the cutlet in the mixed egg.
