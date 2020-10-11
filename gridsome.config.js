@@ -9,16 +9,19 @@ module.exports = {
   siteUrl: 'https://bon-tabio.netlify.app/',
   pathPrefix: '',
   plugins: [{
-    use: 'gridsome-plugin-netlify-cms',
-    options: {
-      publicPath: '/admin'
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'content/recipes/*.yml',
+        typeName: 'Recipe'
+      },
     },
-    use: '@gridsome/source-filesystem',
-    options: {
-      path: 'content/recipes/*.yml',
-      typeName: 'Recipe'
-    },
-  }],
+    {
+      use: `gridsome-plugin-netlify-cms`,
+      options: {
+        publicPath: `/admin`
+      },
+    }
+  ],
   templates: {
     Recipe: '/recipe/:name',
   }
