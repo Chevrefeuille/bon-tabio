@@ -9,8 +9,9 @@ collections:
   - name: "posts"
     label: "Posts"
     folder: "content/posts"
+    extension: yml
     create: true
-    slug: "{{slug}}"
+    slug: "{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Excerpt", name: "excerpt", widget: "string" }
@@ -20,8 +21,9 @@ collections:
   - name: "recipes"
     label: "Recipes"
     folder: "content/recipes"
+    extension: yml
     create: true
-    slug: "{{slug}}"
+    slug: "{{name}}"
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
@@ -30,7 +32,7 @@ collections:
         widget: "object"
         fields:
         - {label: "Quantity", name: "quantity", widget: "string" }
-        - {label: "Unit", name: "unit", widget: "number "}
+        - {label: "Unit", name: "unit", widget: number }
       - label: "Ingredients"
         name: "ingredients"
         widget: "list"
