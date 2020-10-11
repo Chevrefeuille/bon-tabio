@@ -13,14 +13,14 @@ collections:
     create: true
     slug: "{{name}}"
     fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Name", name: "name", widget: string }
+      - { label: "Image", name: "image", widget: image }
       - label: "Amount"
         name: amount
         widget: "object"
         fields:
-        - {label: "Quantity", name: "quantity", widget: "string" }
-        - {label: "Unit", name: "unit", widget: number }
+        - {label: "Quantity", name: "quantity", widget: number }
+        - {label: "Unit", name: "unit", widget: "string" }
       - label: "Ingredients"
         name: "ingredients"
         widget: "list"

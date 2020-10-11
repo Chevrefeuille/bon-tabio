@@ -1,8 +1,8 @@
 name: Tonkatsu
 image: /uploads/tonkatsu.jpg
 amount:
-  quantity: cutlet
-  unit: 1
+  quantity: 1
+  unit: cutlet
 ingredients:
   - name: pork
     quantity: 1
