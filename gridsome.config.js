@@ -6,18 +6,19 @@
 
 module.exports = {
   siteName: 'Bon Tabio',
-  siteUrl: 'https://Chevrefeuille.github.io',
-  pathPrefix: '/adoseri',
+  siteUrl: 'https://bon-tabio.netlify.app/',
+  pathPrefix: '',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'content/recipes/*.yaml',
         typeName: 'Recipe'
+      },
+      use: `gridsome-plugin-netlify-cms`,
+      options: {
+        publicPath: `/admin`
       }
     }
-  ],
-  templates: {
-    Recipe: '/recipe/:name',
-  }
+  ]
 }

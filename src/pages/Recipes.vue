@@ -4,7 +4,7 @@
     <!-- <section
       class="hero is-fullheight recipes"
     >-->
-    <div class="recipe-main-container">
+    <!-- <div class="recipe-main-container">
       <div class="columns is-multiline is-mobile is-centered recipe-grid">
         <div class="column is-4" v-for="edge in $page.allRecipe.edges" :key="edge.node.id">
           <article class="tile is-child box">
@@ -18,7 +18,7 @@
         </div>
       </div>
       <Pager :info="$page.allRecipe.pageInfo"/>
-    </div>
+    </div> -->
     <!-- </section> -->
   </Layout>
 </template>
@@ -31,26 +31,28 @@ export default {
     Pager,
   },
 };
+
+// <page-query>
+// query ($page: Int) {
+//   allRecipe(perPage: 9, page: $page) @paginate {
+//     pageInfo {
+//       totalPages
+//       currentPage
+//     }
+//     edges {
+//       node {
+//         id
+//         path
+//         name
+//         image
+//       }
+//     }
+//   }
+// }
+// </page-query>
 </script>
 
-<page-query>
-query ($page: Int) {
-  allRecipe(perPage: 9, page: $page) @paginate {
-    pageInfo {
-      totalPages
-      currentPage
-    }
-    edges {
-      node {
-        id
-        path
-        name
-        image
-      }
-    }
-  }
-}
-</page-query>
+
 
 <style scoped>
 img {
