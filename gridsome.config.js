@@ -12,8 +12,13 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'content/recipes/*.yaml',
+        path: 'content/recipes/*.yml',
         typeName: 'Recipe'
+      },
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'content/posts/*.yml',
+        typeName: 'Post'
       },
       use: `gridsome-plugin-netlify-cms`,
       options: {
