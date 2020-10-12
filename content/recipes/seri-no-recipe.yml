@@ -1,0 +1,12 @@
+name: seri no recipe
+image: /uploads/shiba.jpg
+amount:
+  quantity: 2
+  unit: dogs
+ingredients:
+  - name: cookie
+    quantity: 100
+    unit: g
+steps:
+  - name: step1
+    action: put cookies in a bowl
