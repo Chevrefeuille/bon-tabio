@@ -1,29 +1,26 @@
 <template>
   <Layout>
-    <!-- <img src="../assets/image_1.jpg"> -->
-    <!-- <section
-      class="hero is-fullheight recipes"
-    >-->
-    <div class="recipe-main-container">
-      <div class="columns is-multiline is-mobile is-centered recipe-grid">
+    <div class="recipes-main-container">
+      <div class="columns is-multiline is-mobile recipes-grid">
         <div
-          class="column is-4"
+          class="column is-3 recipe"
           v-for="edge in $page.allRecipe.edges"
           :key="edge.node.id"
         >
-          <article class="tile is-child box">
-            <p class="title">
+          <article class="box">
+            <p class="title is-5 recipe-title">
               <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
             </p>
-            <figure class="image is-square">
+            <figure class="image is-2by1">
               <img :src="edge.node.image" />
             </figure>
           </article>
         </div>
       </div>
-      <Pager :info="$page.allRecipe.pageInfo" />
+      <div class="pager">
+        <Pager :info="$page.allRecipe.pageInfo" />
+      </div>
     </div>
-    <!-- </section> -->
   </Layout>
 </template>
 
@@ -39,7 +36,7 @@ export default {
 
 <page-query>
 query ($page: Int) {
-  allRecipe(perPage: 9, page: $page) @paginate {
+  allRecipe(perPage: 12, page: $page) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -60,12 +57,37 @@ query ($page: Int) {
 img {
   object-fit: cover;
 }
-
-.recipe-main-container {
-  background-image: url("../assets/image_9.jpg");
+.recipes-main-container {
+  /* background-image: url("../assets/image_9.jpg"); */
+  height: 100%;
+  /* overflow: scroll; */
   background-size: contain;
   padding-left: 10%;
   padding-right: 10%;
+}
+
+.recipes-grid {
+  margin-top: 2px;
+  height: 90%;
+}
+
+.recipe {
+  height: 33%;
+  overflow: hidden;
+  /* margin: 0 0 0 0; */
+}
+
+.recipe-title {
+  margin-bottom: 0.5rem;
+}
+
+.pager {
+  height: 10%;
+}
+
+.box {
+  height: 100%;
+  overflow: hidden;
 }
 </style>
 
