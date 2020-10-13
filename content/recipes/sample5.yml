@@ -1,20 +1,20 @@
-name: sample5
-image: https://www.jocooks.com/wp-content/uploads/2019/10/coconut-chicken-curry-1-10.jpg
+name: Gyudon
+image: /uploads/shiba.jpg
 amount:
-  quantity: 4
-  unit: balls
+  quantity: 2
+  unit: people
 ingredients:
-- name: tuna
-  quantity: 1
-  unit: can
-- name: japanese rice
-  quantity: 200
-  unit: g
+  - name: sliced beef
+    quantity: 200
+    unit: g
+  - name: onion
+    quantity: 1
+    unit: .
 otherIngredients:
-- name: salt
-- name: pepper
+  - name: salt
+  - name: pepper
 steps:
-- name: step 1
-  action: Prepare the chicken
-- name: step 2
-  action: Stir the chicken
+  - name: step 1
+    action: slice onion
+  - name: step 2
+    action: put oil in a pan
