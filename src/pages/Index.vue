@@ -1,20 +1,10 @@
 <template>
   <Layout>
-    <Carousel />
+    Welcome to our website.
   </Layout>
 </template>
 
 <script>
-import Carousel from '~/components/Carousel.vue'
-
-export default {
-  metaInfo: {
-    title: 'Home'
-  },
-  components: {
-    Carousel
-  }
-}
 </script>
 
 <style>
