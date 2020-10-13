@@ -1,4 +1,4 @@
-name: seri no recipe
+name: sample recipe with netlify
 image: /uploads/shiba.jpg
 amount:
   quantity: 2
