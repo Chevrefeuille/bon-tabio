@@ -34,3 +34,19 @@ collections:
         fields:
         - {label: Name, name: "name", widget: string, default }
         - {label: Action, name: "action", widget: markdown }
+
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
+    extension: yml
+    create: true
+    slug: "{{name}}"
+    fields:
+      - { label: "Name", name: "name", widget: string }
+      - { label: "Date", name: "date", widget: date }
+      - label: "Sections"
+        name: "sections"
+        widget: "list"
+        fields:
+        - {label: Content, name: "content", widget: markdown }
+        - {label: Image, name: "image", widget: image }
