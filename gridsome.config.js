@@ -16,6 +16,13 @@ module.exports = {
       },
     },
     {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'content/posts/*.yml',
+        typeName: 'Post'
+      },
+    },
+    {
       use: `gridsome-plugin-netlify-cms`,
       options: {
         publicPath: `/admin`
@@ -24,5 +31,6 @@ module.exports = {
   ],
   templates: {
     Recipe: '/recipe/:name',
+    Post: '/post/:name',
   }
 }

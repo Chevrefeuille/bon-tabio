@@ -12,6 +12,7 @@
         <b-navbar-item tag="g-link" :to="{ path: '/' }">Home</b-navbar-item>
         <b-navbar-item tag="g-link" :to="{ path: '/photos' }">Photos</b-navbar-item>
         <b-navbar-item tag="g-link" :to="{ path: '/recipes' }">Recipes</b-navbar-item>
+        <b-navbar-item tag="g-link" :to="{ path: '/posts' }">Posts</b-navbar-item>
         <b-navbar-dropdown label="Info">
           <b-navbar-item tag="g-link" :to="{ path: '/about' }">About</b-navbar-item>
         </b-navbar-dropdown>
