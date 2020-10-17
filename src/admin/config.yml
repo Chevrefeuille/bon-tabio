@@ -44,9 +44,5 @@ collections:
     fields:
       - { label: "Name", name: "name", widget: string }
       - { label: "Date", name: "date", widget: date }
-      - label: "Sections"
-        name: "sections"
-        widget: "list"
-        fields:
-        - {label: Content, name: "content", widget: markdown }
-        - {label: Image, name: "image", widget: image }
+      - {label: Image, name: "image", widget: image }
+      - {label: Content, name: "content", widget: markdown }

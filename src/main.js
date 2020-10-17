@@ -14,12 +14,14 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
+import VueMarkdown from 'vue-markdown';
 
 library.add(fas);
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('vue-fontawesome', FontAwesomeIcon);
+  Vue.component('vue-markdown', VueMarkdown);
   Vue.use(Buefy, {
     defaultIconComponent: "vue-fontawesome",
     defaultIconPack: "fas",

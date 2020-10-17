@@ -62,6 +62,7 @@ query ($page: Int) {
         id
         name
         date
+        image
         path
       }
     }
