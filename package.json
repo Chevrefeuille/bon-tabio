@@ -17,7 +17,7 @@
     "babel-runtime": "^6.26.0",
     "buefy": "^0.8.20",
     "gh-pages": "^3.1.0",
-    "gridsome": "^0.7.0",
+    "gridsome": "^0.7.21",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "netlify-cms": "^2.10.61",
     "vue-markdown": "^2.2.4"
