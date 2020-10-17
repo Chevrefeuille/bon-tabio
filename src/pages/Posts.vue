@@ -82,7 +82,8 @@ img {
 }
 
 .posts-grid {
-  margin-top: 2px;
+  /* margin-top: 2px; */
+  margin-bottom: 0px;
   height: 90%;
 }
 
@@ -97,7 +98,7 @@ img {
 }
 
 .pager {
-  height: 10%;
+  height: 5%;
 }
 
 .box {

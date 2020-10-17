@@ -52,6 +52,6 @@ body {
 
 .page-content {
   height: calc(100% - 80px);
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 </style>
