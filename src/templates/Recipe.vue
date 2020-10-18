@@ -2,20 +2,16 @@
   <Layout>
     <g-link to="/recipes">Go back to the list of recipes</g-link>
     <h1 class="title has-text-weight-bold">{{ $page.recipe.name }}</h1>
-    <div class="columns">
-      <div class="column is-1"></div>
+    <div class="columns recipe-content">
       <div class="column is-4">
         <div class="icon-and-text">
           For {{ amount }} {{ $page.recipe.amount.unit }}
           <div class="icon-and-text">
-            <a v-on:click="amount += 1" class="icon-and-text">
-              <b-icon icon="plus-circle" size="is-medium"> </b-icon>
-            </a>
-            <a
-              v-on:click="amount = Math.max(1, amount - 1)"
-              class="icon-and-text"
-            >
+            <a v-on:click="amount = Math.max(1, amount - 1)">
               <b-icon icon="minus-circle" size="is-medium"> </b-icon>
+            </a>
+            <a v-on:click="amount += 1">
+              <b-icon icon="plus-circle" size="is-medium"> </b-icon>
             </a>
           </div>
         </div>
@@ -47,7 +43,6 @@
       <div class="column is-6">
         <img :src="$page.recipe.image" />
       </div>
-      <div class="column is-1"></div>
     </div>
     <div class="columns">
       <div class="column is-1"></div>
@@ -114,9 +109,9 @@ query ($id: ID!) {
 </page-query>
 
 <style>
-.recipes {
-  background-image: url("../assets/image_6.jpg");
-  background-size: cover;
+.recipe-content {
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .icon-and-text {
   display: flex;
