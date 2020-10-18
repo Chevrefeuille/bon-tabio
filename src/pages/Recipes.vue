@@ -3,18 +3,15 @@
     <div class="recipes-main-container">
       <div class="columns is-multiline is-mobile recipes-grid">
         <div
-          class="column is-3 recipe"
+          class="column is-4 recipe"
           v-for="edge in $page.allRecipe.edges"
           :key="edge.node.id"
         >
-          <article class="box">
-            <p class="title is-5 recipe-title">
-              <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
-            </p>
-            <figure class="image is-2by1">
-              <img :src="edge.node.image" />
-            </figure>
-          </article>
+          <RecipeCard
+            :recipeImage="edge.node.image"
+            :recipeName="edge.node.name"
+            :recipePath="edge.node.path"
+          ></RecipeCard>
         </div>
       </div>
       <div class="pager">
@@ -25,10 +22,12 @@
 </template>
 
 <script>
+import RecipeCard from "~/components/RecipeCard.vue";
 import { Pager } from "gridsome";
 
 export default {
   components: {
+    RecipeCard,
     Pager,
   },
 };
@@ -36,7 +35,7 @@ export default {
 
 <page-query>
 query ($page: Int) {
-  allRecipe(perPage: 12, page: $page) @paginate {
+  allRecipe(perPage: 9, page: $page) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -54,11 +53,7 @@ query ($page: Int) {
 </page-query>
 
 <style scoped>
-img {
-  object-fit: cover;
-}
 .recipes-main-container {
-  /* background-image: url("../assets/image_9.jpg"); */
   height: 100%;
   /* overflow: scroll; */
   background-size: contain;
@@ -67,7 +62,7 @@ img {
 }
 
 .recipes-grid {
-  margin-top: 2px;
+  margin-bottom: 0px;
   height: 90%;
 }
 
@@ -77,17 +72,8 @@ img {
   /* margin: 0 0 0 0; */
 }
 
-.recipe-title {
-  margin-bottom: 0.5rem;
-}
-
 .pager {
   height: 10%;
-}
-
-.box {
-  height: 100%;
-  overflow: hidden;
 }
 </style>
 

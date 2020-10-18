@@ -1,10 +1,10 @@
 <template>
   <Layout>
-    <div class="return-link">
-      <g-link to="/posts">Go back to the list of posts</g-link>
-    </div>
     <div class="post-container">
-      <p class="title has-text-weight-bold post-title">{{ $page.post.name }}</p>
+      <div class="return-link">
+        <g-link to="/posts">Go back to the list of posts</g-link>
+      </div>
+      <p class="title has-text-weight-bold post-title is-primary">{{ $page.post.name }}</p>
       <vue-markdown>
         {{ $page.post.content }}
       </vue-markdown>
@@ -16,8 +16,7 @@
 export default {
   name: "post",
   data() {
-    return {
-    };
+    return {};
   },
 };
 </script>
@@ -33,16 +32,22 @@ query ($id: ID!) {
 }
 </page-query>
 
-<style scoped>
+<style>
+.post-container {
+  height: calc(100%);
+  overflow: scroll;
+}
 .return-link {
   height: 10px;
   margin-bottom: 10px;
 }
-.post-container {
-  height: calc(100% - 10px - 10px);
-  overflow: scroll;
-}
 .post-title {
   margin-bottom: 0.5rem;
+}
+.post-container img {
+  max-width: 40%;
+  display: block;
+  margin: auto;
+  border: 1px solid black;
 }
 </style>

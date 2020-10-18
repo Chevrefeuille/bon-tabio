@@ -77,8 +77,8 @@ img {
 .posts-main-container {
   height: 100%;
   background-size: contain;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .posts-grid {
