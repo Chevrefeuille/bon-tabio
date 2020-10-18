@@ -15,23 +15,3 @@ $title-weight: $weight-normal;
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
-
-
-
-h2 {
-    font-weight: bold;
-    font-size: larger;
-}
-
-h3 {
-    font-weight: bold;
-}
-
-ul.ingredients {
-    list-style-type: disc;
-}
-
-ul.steps {
-    list-style-type: decimal;
-}
-
