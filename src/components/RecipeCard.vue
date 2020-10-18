@@ -3,7 +3,7 @@
     <g-link :to="recipePath">
       <article class="box">
         <figure
-          class="image is-2by1"
+          class="recipe-image"
           @mouseover="showInfo = true"
           @mouseleave="showInfo = false"
         >
@@ -63,8 +63,15 @@ export default {
   margin-top: 0.2rem;
 }
 
+.recipe-image {
+  height: 100%;
+}
+
 img {
   object-fit: cover;
+  height: 100%;
+  width: 100%;
+  // position: absolute;
 }
 
 .slide-fade-enter-active {
