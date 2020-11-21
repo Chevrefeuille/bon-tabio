@@ -77,12 +77,13 @@ img {
 .posts-main-container {
   height: 100%;
   background-size: contain;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .posts-grid {
-  margin-top: 2px;
+  /* margin-top: 2px; */
+  margin-bottom: 0px;
   height: 90%;
 }
 
@@ -97,7 +98,7 @@ img {
 }
 
 .pager {
-  height: 10%;
+  height: 5%;
 }
 
 .box {

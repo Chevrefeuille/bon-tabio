@@ -10,9 +10,47 @@ ingredients:
   - name: bread crumbs (panko)
     quantity: 100
     unit: g
+  - name: bread crumbs (panko)
+    quantity: 100
+    unit: g
+  - name: bread crumbs (panko)
+    quantity: 100
+    unit: g
+  - name: bread crumbs (panko)
+    quantity: 100
+    unit: g
+  - name: bread crumbs (panko)
+    quantity: 100
+    unit: g
+  - name: bread crumbs (panko)
+    quantity: 100
+    unit: g
+  - name: bread crumbs (panko)
+    quantity: 100
+    unit: g
 otherIngredients:
   - name: salt
   - name: pepper
 steps:
   - name: Step 1
-    action: Dip the cutlet in the mixed egg.
+    action: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar ex sit amet est posuere, volutpat sodales justo feugiat. Sed fermentum magna urna, a convallis nisl dictum vel
+  - name: Step 2
+    action: Curabitur interdum nulla ac ante malesuada consequat. Interdum et malesuada fames ac ante ipsum primis in faucibus
+  - name: Step 3
+    action: Duis eget mollis velit. Sed at porta mi. Aliquam lacus dui, efficitur pharetra facilisis et, mollis pretium sapien. Quisque lorem elit, iaculis ut nisi id, tincidunt maximus augue
+  - name: Step 4
+    action: Praesent blandit, metus vel finibus malesuada, justo ex pulvinar purus, at egestas lorem felis non elit. Aliquam maximus venenatis felis. In molestie fermentum dolor auctor hendrerit. 
+  - name: Step 5
+    action: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar ex sit amet est posuere, volutpat sodales justo feugiat. Sed fermentum magna urna, a convallis nisl dictum vel
+  - name: Step 6
+    action: Curabitur interdum nulla ac ante malesuada consequat. Interdum et malesuada fames ac ante ipsum primis in faucibus
+  - name: Step 7
+    action: Duis eget mollis velit. Sed at porta mi. Aliquam lacus dui, efficitur pharetra facilisis et, mollis pretium sapien. Quisque lorem elit, iaculis ut nisi id, tincidunt maximus augue
+  - name: Step 8
+    action: Praesent blandit, metus vel finibus malesuada, justo ex pulvinar purus, at egestas lorem felis non elit. Aliquam maximus venenatis felis. In molestie fermentum dolor auctor hendrerit. 
+  - name: Step 9
+    action: Curabitur interdum nulla ac ante malesuada consequat. Interdum et malesuada fames ac ante ipsum primis in faucibus
+  - name: Step 10
+    action: Duis eget mollis velit. Sed at porta mi. Aliquam lacus dui, efficitur pharetra facilisis et, mollis pretium sapien. Quisque lorem elit, iaculis ut nisi id, tincidunt maximus augue
+  - name: Step 11
+    action: Praesent blandit, metus vel finibus malesuada, justo ex pulvinar purus, at egestas lorem felis non elit. Aliquam maximus venenatis felis. In molestie fermentum dolor auctor hendrerit. 

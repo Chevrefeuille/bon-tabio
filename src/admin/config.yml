@@ -5,6 +5,10 @@ backend:
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
+i18n:
+  structure: multiple_folders
+  locales: [en, fr]
+
 collections:
   - name: "recipes"
     label: "Recipes"
@@ -13,17 +17,19 @@ collections:
     create: true
     slug: "{{name}}"
     fields:
-      - { label: "Name", name: "name", widget: string }
-      - { label: "Image", name: "image", widget: image }
+      - { label: "Name", name: "name", widget: string, i18n: true }
+      - { label: "Image", name: "image", widget: image, i18n: duplicate }
       - label: "Amount"
         name: amount
         widget: "object"
+        i18n: true
         fields:
-        - {label: "Quantity", name: "quantity", widget: number }
-        - {label: "Unit", name: "unit", widget: "string" }
+        - {label: "Quantity", name: "quantity", widget: number, i18n: true }
+        - {label: "Unit", name: "unit", widget: "string", i18n: true }
       - label: "Ingredients"
         name: "ingredients"
         widget: "list"
+        i18n: true
         fields:
         - {label: Name, name: "name", widget: string, default }
         - {label: Quantity, name: "quantity", widget: number }
@@ -31,6 +37,7 @@ collections:
       - label: "Steps"
         name: "steps"
         widget: "list"
+        i18n: true
         fields:
         - {label: Name, name: "name", widget: string, default }
         - {label: Action, name: "action", widget: markdown }
@@ -42,7 +49,7 @@ collections:
     create: true
     slug: "{{name}}"
     fields:
-      - { label: "Name", name: "name", widget: string }
-      - { label: "Date", name: "date", widget: date }
-      - {label: Image, name: "image", widget: image }
-      - {label: Content, name: "content", widget: markdown }
+      - { label: "Name", name: "name", widget: string, i18n: true}
+      - { label: "Date", name: "date", widget: date, i18n: duplicate }
+      - { label: Image, name: "image", widget: image, i18n: duplicate }
+      - { label: Content, name: "content", widget: markdown, i18n: true }

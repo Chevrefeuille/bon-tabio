@@ -1,6 +1,6 @@
 <template>
   <div id="navbar">
-    <b-navbar>
+    <b-navbar type="is-light">
       <template slot="brand">
         <b-navbar-item tag="g-link" :to="{ path: '/' }">
           <img
@@ -21,5 +21,12 @@
   </div>
 </template>
 
-<style>
+
+<style scoped>
+
+#navbar {
+  height: 100%;
+  width:100%;
+}
+
 </style>

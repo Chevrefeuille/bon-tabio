@@ -3,10 +3,9 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 
-import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
+import '~/assets/styles.scss'
 
-import '~/assets/styles.css'
+import Buefy from 'buefy'
 
 
 import { library } from '@fortawesome/fontawesome-svg-core';
