@@ -34,6 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .recipe-card-container {
   height: 100%;
 }
@@ -52,8 +53,9 @@ export default {
   z-index: 10;
   top: 75%;
   left: 0;
-  background-color: white;
-  box-shadow: 0 -2px 3px rgba(10, 10, 10, 0.1);
+  background-color: $primary;
+  // color: white;
+  // box-shadow: 0 -2px 3px rgba(10, 10, 10, 0.1);
   width: 100%;
   height: 25%;
 }
@@ -61,6 +63,7 @@ export default {
 .recipe-title {
   margin-left: 0.5rem;
   margin-top: 0.2rem;
+  color: black;
 }
 
 .recipe-image {
