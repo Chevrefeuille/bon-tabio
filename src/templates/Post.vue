@@ -1,17 +1,21 @@
 <template>
   <Layout>
+    <div class="return-link">
+      <g-link to="/posts">Go back to the list of posts</g-link>
+    </div>
     <section class="section">
-      <!-- <div class="container"> -->
-        <div class="post-container">
-          <div class="return-link">
-            <g-link to="/posts">Go back to the list of posts</g-link>
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="post-container">
+              <p class="title has-text-weight-bold post-title is-primary">{{ $page.post.name }}</p>
+              <vue-markdown>
+                {{ $page.post.content }}
+              </vue-markdown>
+            </div>
           </div>
-          <p class="title has-text-weight-bold post-title is-primary">{{ $page.post.name }}</p>
-          <vue-markdown>
-            {{ $page.post.content }}
-          </vue-markdown>
         </div>
-      <!-- </div> -->
+      </div>
     </section>
   </Layout>
 </template>
