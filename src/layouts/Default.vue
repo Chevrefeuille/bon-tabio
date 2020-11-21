@@ -37,7 +37,6 @@ body {
 
 #layout {
   background-color:mistyrose;
-  min-height: 100vh;
 }
 
 #header {
