@@ -1,14 +1,18 @@
 <template>
   <Layout>
-    <div class="post-container">
-      <div class="return-link">
-        <g-link to="/posts">Go back to the list of posts</g-link>
-      </div>
-      <p class="title has-text-weight-bold post-title is-primary">{{ $page.post.name }}</p>
-      <vue-markdown>
-        {{ $page.post.content }}
-      </vue-markdown>
-    </div>
+    <section class="section">
+      <!-- <div class="container"> -->
+        <div class="post-container">
+          <div class="return-link">
+            <g-link to="/posts">Go back to the list of posts</g-link>
+          </div>
+          <p class="title has-text-weight-bold post-title is-primary">{{ $page.post.name }}</p>
+          <vue-markdown>
+            {{ $page.post.content }}
+          </vue-markdown>
+        </div>
+      <!-- </div> -->
+    </section>
   </Layout>
 </template>
 
@@ -35,7 +39,7 @@ query ($id: ID!) {
 <style>
 .post-container {
   height: 100%;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 .return-link {
   height: 10px;

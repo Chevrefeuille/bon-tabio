@@ -40,7 +40,8 @@ body {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-  height: 100%;
+  /* height: 100%; */
+  min-height: 100%;
   background-color:mistyrose;
 }
 
