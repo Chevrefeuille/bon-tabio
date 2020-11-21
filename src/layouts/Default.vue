@@ -41,6 +41,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   height: 100%;
+  background-color:mistyrose;
 }
 
 .header {
