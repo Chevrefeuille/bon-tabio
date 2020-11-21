@@ -75,7 +75,6 @@ img {
   object-fit: cover;
 }
 .posts-main-container {
-  height: 100%;
   background-size: contain;
   padding-left: 20%;
   padding-right: 20%;

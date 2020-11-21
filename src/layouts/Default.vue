@@ -1,6 +1,6 @@
 <template>
-  <div class="layout">
-    <header class="header">
+  <div id="layout">
+    <header id="header">
       <Navbar />
     </header>
     <div class="page-content">
@@ -29,31 +29,19 @@ query {
 
 <style>
 body {
-  height: 100vh;
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   margin:0;
   padding:0;
   line-height: 1.5;
 }
 
-.layout {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  /* height: 100%; */
-  min-height: 100%;
+#layout {
   background-color:mistyrose;
+  min-height: 100vh;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
+#header {
+  height: 52px;
 }
 
-.page-content {
-  height: calc(100% - 80px);
-  /* overflow: scroll; */
-}
 </style>

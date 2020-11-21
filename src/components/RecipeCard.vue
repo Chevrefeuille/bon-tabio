@@ -1,9 +1,9 @@
 <template>
-  <div class="recipe-card-container">
+  <article class="recipe-card-container">
     <g-link :to="recipePath">
-      <article class="box">
+      <div class="box">
         <figure
-          class="recipe-image"
+          class="image image is-3by2"
           @mouseover="showInfo = true"
           @mouseleave="showInfo = false"
         >
@@ -16,9 +16,9 @@
             </p>
           </div>
         </transition>
-      </article>
+      </div>
     </g-link>
-  </div>
+  </article>
 </template>
 
 
@@ -35,29 +35,22 @@ export default {
 
 <style lang="scss" scoped>
 
-.recipe-card-container {
-  height: 100%;
-}
 
 .box {
   position: relative;
-  height: 100%;
   overflow: hidden;
   padding: 0 0 0 0;
-  /* box-shadow: none; */
-  border-radius: 0px;
+  border-radius: 10px;
 }
 
 .recipe-info {
   position: absolute;
-  z-index: 10;
-  top: 75%;
+  z-index: 1;
+  top: 80%;
   left: 0;
-  background-color: $primary;
-  // color: white;
-  // box-shadow: 0 -2px 3px rgba(10, 10, 10, 0.1);
+  background-color: white;
   width: 100%;
-  height: 25%;
+  height: 20%;
 }
 
 .recipe-title {
@@ -66,15 +59,8 @@ export default {
   color: black;
 }
 
-.recipe-image {
-  height: 100%;
-}
-
 img {
   object-fit: cover;
-  height: 100%;
-  width: 100%;
-  // position: absolute;
 }
 
 .slide-fade-enter-active {
