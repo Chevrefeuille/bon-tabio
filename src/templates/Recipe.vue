@@ -4,61 +4,69 @@
       <div class="return-link">
         <g-link to="/recipes">Go back to the list of recipes</g-link>
       </div>
-      <p class="title is-3 recipe-title">{{ $page.recipe.name }}</p>
-      <div class="columns">
-        <!-- <div class="column is-4 image">
-          <img :src="$page.recipe.image" />
-        </div> -->
-        <div class="column is-5 ingredients-and-image">
-          <div class="ingredients-container card">
-            <div class="ingredients-title-container">
-              <p class="title is-4 ingredients-title">Ingredients</p>
+      <section class="section">
+        <div class="container">
+          <p class="title is-3 has-text-weight-bold">{{ $page.recipe.name }}</p>
+          <div class="columns is-centered">
+            <!-- <div class="column is-4 image">
+              <img :src="$page.recipe.image" />
+            </div> -->
+            <div class="column is-5">
+                <div class="block">
+                  <p class="title is-4 has-text-weight-bold">Ingredients</p>
+                </div>
+                <div class="icon-and-text">
+                  <p class="has-text-weight-semibold">For {{ amount }} {{ $page.recipe.amount.unit }}</p>
+                  <a v-on:click="amount = Math.max(1, amount - 1)">
+                    <b-icon icon="minus-circle" size="is-small"> </b-icon>
+                  </a>
+                  <a v-on:click="amount += 1">
+                    <b-icon icon="plus-circle" size="is-small"> </b-icon>
+                  </a>
+                </div>
+                <div class="content">
+                  <ul>
+                    <li
+                      v-for="(ingredient, i) in $page.recipe.ingredients"
+                      :key="i"
+                    >
+                      {{ ingredient.name }} :
+                      {{ scaleQuantity(ingredient.quantity) }}
+                      {{ ingredient.unit }}
+                    </li>
+                    <!-- here is no amout ingredients -->
+                    <li
+                      v-for="(ingredient, i) in $page.recipe.otherIngredients"
+                      :key="i"
+                    >
+                      {{ ingredient.name }}
+                    </li>
+                  </ul>
+                </div>
             </div>
-            <div class="icon-and-text ingredients-quantities">
-              <p>For {{ amount }} {{ $page.recipe.amount.unit }}</p>
-              <a v-on:click="amount = Math.max(1, amount - 1)">
-                <b-icon icon="minus-circle" size="is-small"> </b-icon>
-              </a>
-              <a v-on:click="amount += 1">
-                <b-icon icon="plus-circle" size="is-small"> </b-icon>
-              </a>
-            </div>
-            <div class="ingredients">
-              <ul class="ingredients-amount">
-                <li
-                  v-for="(ingredient, i) in $page.recipe.ingredients"
-                  :key="i"
-                >
-                  {{ ingredient.name }} :
-                  {{ scaleQuantity(ingredient.quantity) }}
-                  {{ ingredient.unit }}
-                </li>
-              </ul>
-              <ul class="ingredients-no-amount">
-                <li
-                  v-for="(ingredient, i) in $page.recipe.otherIngredients"
-                  :key="i"
-                >
-                  {{ ingredient.name }}
-                </li>
-              </ul>
+            <div class="column is-5">
+              <div>
+                <img :src="$page.recipe.image" />
+              </div>
             </div>
           </div>
-          <div class="image card">
-            <img :src="$page.recipe.image" />
+
+          <div class="columns is-centered">
+            <div class="column is-10">
+              <div>
+                <p class="title is-4 has-text-weight-bold">Steps</p>
+              </div>
+              <div class="content">
+                <ol type="1">
+                  <li v-for="(step, i) in $page.recipe.steps" :key="i">
+                    {{ step.action }}
+                  </li>
+                </ol>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="column is-7 steps-container card">
-          <div class="ingredients-title-container">
-            <p class="title is-4 ingredients-title">Steps</p>
-          </div>
-          <ul class="steps">
-            <li v-for="(step, i) in $page.recipe.steps" :key="i">
-              {{ step.action }}
-            </li>
-          </ul>
-        </div>
-      </div>
+      </section>
     </div>
   </Layout>
 </template>
@@ -121,9 +129,9 @@ query ($id: ID!) {
   margin-bottom: 0.2rem;
 }
 
-.columns {
+/* .columns {
   height: calc(100% - 3rem);
-}
+} */
 
 .ingredients-and-image {
   padding-top: 0;
