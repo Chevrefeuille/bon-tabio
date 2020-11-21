@@ -1,29 +1,31 @@
 <template>
   <Layout>
-    <div class="posts-main-container">
-      <div class="columns is-multiline is-mobile posts-grid">
-        <div
-          class="column is-12 post"
-          v-for="edge in $page.allPost.edges"
-          :key="edge.node.id"
-        >
-          <article class="box">
-            <p class="title is-5 post-title">
-              <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
-            </p>
-            <p class="subtitle is-5 post-subtitle">
-              {{ getDate(edge.node.date) }}
-            </p>
-            <figure class="image is-2by1">
-              <img :src="edge.node.image" />
-            </figure>
-          </article>
+    <section class="section">
+      <div class="container">
+        <div class="columns is-multiline is-mobile posts-grid">
+          <div
+            class="column is-12 post"
+            v-for="edge in $page.allPost.edges"
+            :key="edge.node.id"
+          >
+            <article class="box">
+              <p class="title is-5 post-title">
+                <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
+              </p>
+              <p class="subtitle is-5 post-subtitle">
+                {{ getDate(edge.node.date) }}
+              </p>
+              <figure class="image is-2by1">
+                <img :src="edge.node.image" />
+              </figure>
+            </article>
+          </div>
+        </div>
+        <div class="pager">
+          <Pager :info="$page.allPost.pageInfo" />
         </div>
       </div>
-      <div class="pager">
-        <Pager :info="$page.allPost.pageInfo" />
-      </div>
-    </div>
+    </section>
   </Layout>
 </template>
 
@@ -73,11 +75,6 @@ query ($page: Int) {
 <style scoped>
 img {
   object-fit: cover;
-}
-.posts-main-container {
-  background-size: contain;
-  padding-left: 20%;
-  padding-right: 20%;
 }
 
 .posts-grid {
