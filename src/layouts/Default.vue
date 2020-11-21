@@ -33,6 +33,7 @@ body {
   margin:0;
   padding:0;
   line-height: 1.5;
+  min-height: 100vh;
 }
 
 #layout {
