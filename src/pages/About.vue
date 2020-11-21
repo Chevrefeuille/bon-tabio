@@ -2,9 +2,7 @@
   <Layout>
     <h1>About us</h1>
     <p></p>
-    <div class="columns is-mobile">
-      <div class="column is-2">
-      </div>
+    <div class="columns is-centered">
       <!-- Adochan info -->
       <div class="column is-4">
         <div class="card">
@@ -68,7 +66,6 @@
           </div>
         </div>
       </div>
-    <div class="column is-2"></div>
     </div>
   </Layout>
 </template>

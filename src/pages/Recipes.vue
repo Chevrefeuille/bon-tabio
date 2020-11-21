@@ -2,7 +2,7 @@
   <Layout>
     <section class="section">
       <div class="container">
-        <div class="columns is-multiline is-mobile">
+        <div class="columns is-multiline">
           <div
             class="column is-4 recipe"
             v-for="edge in $page.allRecipe.edges"
