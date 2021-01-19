@@ -2,22 +2,24 @@
   <Layout>
     <section class="section">
       <div class="container">
-        <div class="columns is-multiline is-mobile posts-grid">
+        <div class="columns is-multiline is-mobile posts-grid is-centered">
           <div
-            class="column is-12 post"
+            class="column is-8 post"
             v-for="edge in $page.allPost.edges"
             :key="edge.node.id"
           >
-            <article class="box">
-              <p class="title is-5 post-title">
-                <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
-              </p>
-              <p class="subtitle is-5 post-subtitle">
-                {{ getDate(edge.node.date) }}
-              </p>
-              <figure class="image is-2by1">
-                <img :src="edge.node.image" />
-              </figure>
+            <article class="message is-dark">
+              <div class="message-body">
+                <p class="title is-5 post-title">
+                  <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
+                </p>
+                <p class="subtitle is-5 post-subtitle">
+                  {{ getDate(edge.node.date) }}
+                </p>
+                <!-- <figure class="image is-2by1">
+                  <img :src="edge.node.image" />
+                </figure> -->
+              </div>
             </article>
           </div>
         </div>

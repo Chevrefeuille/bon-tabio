@@ -6,12 +6,26 @@
       </div>
       <section class="section">
         <div class="container">
-          <p class="title is-3 has-text-weight-bold">{{ $page.recipe.name }}</p>
+          <p class="title is-1 has-text-weight-bold has-text-centered">{{ $page.recipe.name }}</p>
+          <div class="columns is-centered">
+            <div class="column is-5">
+              <p class="is-size-4">
+                here we are going to write something about the dish. <br>here we are going to write something about the dish.
+                <br>here we are going to write something about the dish.<br>here we are going to write something about the dish.
+                <br>here we are going to write something about the dish.<br>here we are going to write something about the dish.             
+              </p>
+            </div>
+            <div class="column is-7">
+              <div>
+                <img :src="$page.recipe.image" />
+              </div>
+            </div>
+          </div>
           <div class="columns is-centered">
             <!-- <div class="column is-4 image">
               <img :src="$page.recipe.image" />
             </div> -->
-            <div class="column is-5">
+            <div class="column is-10">
                 <div class="block">
                   <p class="title is-4 has-text-weight-bold">Ingredients</p>
                 </div>
@@ -44,12 +58,8 @@
                   </ul>
                 </div>
             </div>
-            <div class="column is-5">
-              <div>
-                <img :src="$page.recipe.image" />
-              </div>
-            </div>
           </div>
+          
 
           <div class="columns is-centered">
             <div class="column is-10">
