@@ -1,71 +1,129 @@
 <template>
   <Layout>
-    <!-- <Carousel /> -->
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <div class="tile is-child">
-          <img src="https://picsum.photos/id/430/1230/500">
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="tile is-child">
-          <img src="https://picsum.photos/id/431/1230/500">
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="tile is-child">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvn22E1nI-5LbYKX9_Rl0eU5-liVW8sVP3Q&usqp=CAU">
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="tile is-child">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLEOTPbP7p02htltYd-wRVBOzLvshDx8yZfw&usqp=CAU">
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="tile is-child">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLEOTPbP7p02htltYd-wRVBOzLvshDx8yZfw&usqp=CAU">
-        </div>
-      </div>
-    </div>
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <div class="tile is-child">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsSk8XUUORIihuQUdJvWzzIc4jirflPIKytQ&usqp=CAU">
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="tile is-child">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQCrGEuZUr1HLuJ-gTJNzaGBuWwGuXBdJsMA&usqp=CAU">
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="tile is-child">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8JBOzwJ7q_UDIj8fS8UOmOqMcCi66q1kG_A&usqp=CAU">
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="tile is-child">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVilHwwd_FsGkDeLeSwMSL2cGDMT3zIfIBqg&usqp=CAU">
+    <div class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-one-third">
+            <div class="tile is-ancestor is-vertical is-parent">
+              <div
+                v-for="edge in imagesSlice(3, 1)"
+                :key="edge.node.id"
+                class="tile is-child box"
+              >
+                <figure class="image" :class="[getRandomImageSizeClass()]">
+                  <img :src="edge.node.image" />
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="tile is-ancestor is-vertical is-parent">
+              <div
+                v-for="edge in imagesSlice(3, 2)"
+                :key="edge.node.id"
+                class="tile is-child box"
+              >
+                <figure class="image" :class="[getRandomImageSizeClass()]">
+                  <img :src="edge.node.image" />
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="tile is-ancestor is-vertical is-parent">
+              <div
+                v-for="edge in imagesSlice(3, 3)"
+                :key="edge.node.id"
+                class="tile is-child box"
+              >
+                <figure class="image" :class="[getRandomImageSizeClass()]">
+                  <img :src="edge.node.image" />
+                </figure>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- <div
+      class="column is-8 post"
+      v-for="edge in $page.allPhotos.edges"
+      :key="edge.node.id"
+    >
+      <img :src="edge.node.image" />
+    </div> -->
   </Layout>
 </template>
 
 <script>
-import Carousel from '~/components/Carousel.vue'
-
 export default {
   metaInfo: {
-    title: 'Home'
+    title: "Home",
   },
-  components: {
-    Carousel
-  }
-}
+  computed: {
+    numberOfImages() {
+      return this.$page.allPhotos.edges.length;
+    }
+  },
+  methods: {
+    getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
+    getRandomImageSizeClass() {
+      const randomInt = this.getRandomInt(0, 4);
+      switch (randomInt) {
+        case 0:
+          return "is-square";
+          break;
+        case 1:
+          return "is-4by3";
+          break;
+        case 2:
+          return "is-3by4";
+          break;
+        case 3:
+          return "is-2by3";
+          break;
+        case 4:
+          return "is-3by2";
+          break;
+      }
+    },
+    imagesSlice(n, i) {
+      const start = (i - 1) * Math.floor(this.numberOfImages / n);
+      let end;
+      if (i < n) {
+        end = i * Math.floor(this.numberOfImages / n);
+      } else {
+        end = this.numberOfImages;
+      }
+      console.log(start, end);
+      return this.$page.allPhotos.edges.slice(start, end);
+    }
+  },
+};
 </script>
 
+<page-query>
+query {
+  allPhotos {
+    edges {
+      node {
+        id
+        name
+        date
+        description
+        image
+      }
+    }
+  }
+}
+</page-query>
 
 <style>
+img {
+  object-fit: cover;
+}
 </style>
