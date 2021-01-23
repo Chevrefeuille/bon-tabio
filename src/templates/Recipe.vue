@@ -6,14 +6,11 @@
       </div>
       <section class="section">
         <div class="container">
-          <p class="title is-1 has-text-weight-bold has-text-centered">{{ $page.recipe.name }}</p>
+          <!-- <p class="title is-1 has-text-weight-bold has-text-centered">{{ $page.recipe.name }}</p> -->
           <div class="columns is-centered">
             <div class="column is-5">
-              <p class="is-size-4">
-                here we are going to write something about the dish. <br>here we are going to write something about the dish.
-                <br>here we are going to write something about the dish.<br>here we are going to write something about the dish.
-                <br>here we are going to write something about the dish.<br>here we are going to write something about the dish.             
-              </p>
+              <h1 class="title is-1 has-text-weight-semibold">{{ $page.recipe.name }}</h1>
+              <h2 class="subtitle is-3">aaaaaaaaaa</h2>
             </div>
             <div class="column is-7">
               <div>
