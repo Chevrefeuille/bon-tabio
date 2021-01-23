@@ -35,6 +35,13 @@ module.exports = {
       },
     },
     {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'content/photos/*.yml',
+        typeName: 'Photos'
+      },
+    },
+    {
       use: `gridsome-plugin-netlify-cms`,
       options: {
         publicPath: `/admin`

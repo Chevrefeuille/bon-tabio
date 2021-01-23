@@ -53,3 +53,15 @@ collections:
       - { label: "Date", name: "date", widget: date, i18n: duplicate }
       - { label: Image, name: "image", widget: image, i18n: duplicate }
       - { label: Content, name: "content", widget: markdown, i18n: true }
+
+  - name: "photos"
+    label: "Photos"
+    folder: "content/photos"
+    extension: yml
+    create: true
+    slug: "{{name}}"
+    fields:
+      - { label: "Name", name: "name", widget: string, i18n: true}
+      - { label: Image, name: "image", widget: image, i18n: duplicate }
+      - { label: "Description", name: "description", widget: text, i18n: duplicate }
+      - { label: "Date", name: "date", widget: date, i18n: duplicate }
