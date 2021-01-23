@@ -35,16 +35,21 @@ module.exports = {
       },
     },
     {
-      use: '@gridsome/source-filesystem',
-      options: {
-        path: 'content/photos/*.yml',
-        typeName: 'Photos'
-      },
-    },
-    {
       use: `gridsome-plugin-netlify-cms`,
       options: {
         publicPath: `/admin`
+      },
+    },
+    {
+      use: 'gridsome-source-cloudinary',
+      options: {
+        cloudName: process.env.CLOUDNAME,
+        apiKey: process.env.API_KEY,
+        apiSecret: process.env.API_SECRET,
+        resourceOptions: {
+          prefix: 'samples/landscapes', //Folder to fetch media from: examples
+          max_results: 50 //Return maximum 50 media items.
+        },
       },
     }
   ],

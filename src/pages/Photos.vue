@@ -6,12 +6,12 @@
           <div class="column is-one-third">
             <div class="tile is-ancestor is-vertical is-parent">
               <div
-                v-for="edge in imagesSlice(3, 1)"
-                :key="edge.node.id"
+                v-for="image in imagesSlice(3, 1)"
+                :key="image.public_id"
                 class="tile is-child box image-box"
               >
                 <figure class="image" :class="[getRandomImageSizeClass()]">
-                  <img :src="edge.node.image" />
+                  <img :src="image.secure_url" />
                 </figure>
               </div>
             </div>
@@ -19,12 +19,12 @@
           <div class="column is-one-third">
             <div class="tile is-ancestor is-vertical is-parent">
               <div
-                v-for="edge in imagesSlice(3, 2)"
-                :key="edge.node.id"
+                v-for="image in imagesSlice(3, 2)"
+                :key="image.public_id"
                 class="tile is-child box image-box"
               >
                 <figure class="image" :class="[getRandomImageSizeClass()]">
-                  <img :src="edge.node.image" />
+                  <img :src="image.secure_url" />
                 </figure>
               </div>
             </div>
@@ -32,12 +32,12 @@
           <div class="column is-one-third">
             <div class="tile is-ancestor is-vertical is-parent">
               <div
-                v-for="edge in imagesSlice(3, 3)"
-                :key="edge.node.id"
+                v-for="image in imagesSlice(3, 3)"
+                :key="image.public_id"
                 class="tile is-child box image-box"
               >
                 <figure class="image" :class="[getRandomImageSizeClass()]">
-                  <img :src="edge.node.image" />
+                  <img :src="image.secure_url" />
                 </figure>
               </div>
             </div>
@@ -54,9 +54,12 @@ export default {
     title: "Home",
   },
   computed: {
-    numberOfImages() {
-      return this.$page.allPhotos.edges.length;
-    }
+    images() {
+      return this.$page.images.edges.map(({ node }) => node);
+    },
+    totalNumberOfImages() {
+      return this.images.length;
+    },
   },
   methods: {
     getRandomInt(min, max) {
@@ -85,30 +88,30 @@ export default {
       }
     },
     imagesSlice(n, i) {
-      const start = (i - 1) * Math.floor(this.numberOfImages / n);
-      let end;
-      if (i < n) {
-        end = i * Math.floor(this.numberOfImages / n);
+      let start = (i - 1) * Math.floor(this.totalNumberOfImages / n);
+      console.log(start);
+      let numberOfImages = Math.floor(this.totalNumberOfImages / n);
+      const leftovers = this.totalNumberOfImages % n;
+      if (leftovers != 0 && i <= leftovers) {
+        start += (i - 1);
+        numberOfImages += 1;
       } else {
-        end = this.numberOfImages;
+        start += leftovers;
       }
-      console.log(start, end);
-      return this.$page.allPhotos.edges.slice(start, end);
-    }
+      console.log(start, start + numberOfImages);
+      return this.images.slice(start, start + numberOfImages);
+    },
   },
 };
 </script>
 
 <page-query>
 query {
-  allPhotos {
+  images: allCldMedia {
     edges {
       node {
-        id
-        name
-        date
-        description
-        image
+        secure_url
+        public_id
       }
     }
   }
