@@ -1,0 +1,42 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+$primary: #FFCAB1;
+$primary-invert: findColorInvert($primary);
+
+$info: #C1D7AE;
+$info-invert: findColorInvert($info);
+
+$light: #FFF1EB;
+$light-invert: findColorInvert($light);
+
+$link: #8CC084;
+$link-invert: findColorInvert($link);
+
+$title-color: $primary;
+$weight-normal: 400;
+$title-weight: $weight-normal;
+
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert)
+);
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+body {
+  background-color: $light;
+}
+
+#app {
+  padding: 0 0 0 0;
+}

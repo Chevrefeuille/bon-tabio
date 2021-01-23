@@ -1,0 +1,67 @@
+backend:
+  name: github
+  repo: chevrefeuille/bon-tabio
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+i18n:
+  structure: multiple_folders
+  locales: [en, fr]
+
+collections:
+  - name: "recipes"
+    label: "Recipes"
+    folder: "content/recipes"
+    extension: yml
+    create: true
+    slug: "{{name}}"
+    fields:
+      - { label: "Name", name: "name", widget: string, i18n: true }
+      - { label: "Image", name: "image", widget: image, i18n: duplicate }
+      - label: "Amount"
+        name: amount
+        widget: "object"
+        i18n: true
+        fields:
+        - {label: "Quantity", name: "quantity", widget: number, i18n: true }
+        - {label: "Unit", name: "unit", widget: "string", i18n: true }
+      - label: "Ingredients"
+        name: "ingredients"
+        widget: "list"
+        i18n: true
+        fields:
+        - {label: Name, name: "name", widget: string, default }
+        - {label: Quantity, name: "quantity", widget: number }
+        - {label: Unit, name: "unit", widget: string }
+      - label: "Steps"
+        name: "steps"
+        widget: "list"
+        i18n: true
+        fields:
+        - {label: Name, name: "name", widget: string, default }
+        - {label: Action, name: "action", widget: markdown }
+
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
+    extension: yml
+    create: true
+    slug: "{{name}}"
+    fields:
+      - { label: "Name", name: "name", widget: string, i18n: true}
+      - { label: "Date", name: "date", widget: date, i18n: duplicate }
+      - { label: Image, name: "image", widget: image, i18n: duplicate }
+      - { label: Content, name: "content", widget: markdown, i18n: true }
+
+  - name: "photos"
+    label: "Photos"
+    folder: "content/photos"
+    extension: yml
+    create: true
+    slug: "{{name}}"
+    fields:
+      - { label: "Name", name: "name", widget: string, i18n: true}
+      - { label: Image, name: "image", widget: image, i18n: duplicate }
+      - { label: "Description", name: "description", widget: text, i18n: duplicate }
+      - { label: "Date", name: "date", widget: date, i18n: duplicate }

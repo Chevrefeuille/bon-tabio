@@ -1,0 +1,20 @@
+name: sample9
+image: https://images.japancentre.com/recipes/pics/382/main/photo_mabo_don.jpg?1469573058
+amount:
+  quantity: 1
+  unit: person
+ingredients:
+- name: minced pork
+  quantity: 100
+  unit: g
+- name: rice
+  quantity: 200
+  unit: g
+otherIngredients:
+- name: salt
+- name: Sichuan pepper
+steps:
+- name: step 1
+  action: Prepare the chicken
+- name: step 2
+  action: Stir the chicken
