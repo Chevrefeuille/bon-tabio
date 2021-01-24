@@ -7,12 +7,12 @@
       <section class="section">
         <div class="container">
           <!-- <p class="title is-1 has-text-weight-bold has-text-centered">{{ $page.recipe.name }}</p> -->
-          <div class="columns is-centered">
+          <div class="columns is-centered is-vcentered">
             <div class="column is-5">
               <h1 class="title is-1 has-text-weight-semibold">{{ $page.recipe.name }}</h1>
-              <h2 class="subtitle is-3">aaaaaaaaaa</h2>
+              <h2 class="subtitle is-3">Japan</h2>
             </div>
-            <div class="column is-7">
+            <div class="column is-7 has-text-centered">
               <div>
                 <img :src="$page.recipe.image" />
               </div>

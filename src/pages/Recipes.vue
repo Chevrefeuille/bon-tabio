@@ -59,6 +59,7 @@
           </b-pagination> -->
         </div>
       </div>
+      <pagination/>
     </section>
   </Layout>
 </template>
@@ -66,11 +67,13 @@
 <script>
 import RecipeCard from "~/components/RecipeCard.vue";
 import { Pager } from "gridsome";
+import Pagination from '~/components/Pagination.vue'
 
 export default {
   components: {
     RecipeCard,
     Pager,
+    Pagination
   },
   computed: {
     currentPage() {
