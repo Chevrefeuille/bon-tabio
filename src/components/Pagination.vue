@@ -1,7 +1,7 @@
 <template>
   <section>
     <b-pagination
-      :total="$page.recipes.totalCount"
+      :total="ressourceData.totalCount"
       :current="currentPage"
       :per-page="perPage"
       :rounded="true"
@@ -42,10 +42,10 @@
 
 <script>
 export default {
-  props: ["ressourceName", "perPage"],
+  props: ["ressourceName", "perPage", "ressourceData"],
   computed: {
     currentPage() {
-      return this.$page.recipes.pageInfo.currentPage;
+      return this.ressourceData.pageInfo.currentPage;
     },
   },
   methods: {
@@ -53,7 +53,7 @@ export default {
     sanitizeRoute(pageID) {
       if (pageID == 1) {
         return "";
-      } else if (pageID == this.$page.recipes.pageInfo.totalPages + 1) {
+      } else if (pageID == this.ressourceData.pageInfo.totalPages + 1) {
         return pageID - 1;
       }
       return pageID;

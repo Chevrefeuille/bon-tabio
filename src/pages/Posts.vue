@@ -5,26 +5,30 @@
         <div class="columns is-multiline is-mobile posts-grid is-centered">
           <div
             class="column is-8 post"
-            v-for="edge in $page.allPost.edges"
-            :key="edge.node.id"
+            v-for="post in posts"
+            :key="post.id"
           >
             <article class="message is-dark">
               <div class="message-body">
                 <p class="title is-5 post-title">
-                  <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
+                  <g-link :to="post.path">{{ post.name }}</g-link>
                 </p>
                 <p class="subtitle is-5 post-subtitle">
-                  {{ getDate(edge.node.date) }}
+                  {{ getDate(post.date) }}
                 </p>
                 <!-- <figure class="image is-2by1">
-                  <img :src="edge.node.image" />
+                  <img :src="post.image" />
                 </figure> -->
               </div>
             </article>
           </div>
         </div>
         <div class="pager">
-          <Pager :info="$page.allPost.pageInfo" />
+          <Pagination
+            :ressourceName="'posts'"
+            :perPage="1"
+            :ressourceData="$page.posts"
+          />
         </div>
       </div>
     </section>
@@ -32,11 +36,16 @@
 </template>
 
 <script>
-import { Pager } from "gridsome";
+import Pagination from "~/components/Pagination.vue";
 
 export default {
   components: {
-    Pager,
+    Pagination,
+  },
+  computed: {
+    posts() {
+      return this.$page.posts.edges.map(({ node }) => node);
+    },
   },
   methods: {
     getDate(datetime) {
@@ -56,7 +65,8 @@ export default {
 
 <page-query>
 query ($page: Int) {
-  allPost(perPage: 4, page: $page) @paginate {
+  posts: allPost(perPage: 1, page: $page) @paginate {
+    totalCount
     pageInfo {
       totalPages
       currentPage

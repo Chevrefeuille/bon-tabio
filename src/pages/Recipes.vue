@@ -16,7 +16,11 @@
           </div>
         </div>
         <div class="pager">
-          <Pagination :ressourceName="'recipes'" :perPage="3" />
+          <Pagination
+            :ressourceName="'recipes'"
+            :perPage="3"
+            :ressourceData="$page.recipes"
+          />
         </div>
       </div>
     </section>
