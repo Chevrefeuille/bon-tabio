@@ -48,7 +48,8 @@ module.exports = {
         apiSecret: process.env.API_SECRET,
         resourceOptions: {
           prefix: 'samples/landscapes', //Folder to fetch media from: examples
-          max_results: 50 //Return maximum 50 media items.
+          max_results: 50, //Return maximum 50 media items.
+          type: 'upload'
         },
       },
     }
