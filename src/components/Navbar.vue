@@ -8,7 +8,7 @@
           />
         </b-navbar-item>
       </template>
-      <template slot="start">
+      <template slot="end">
         <b-navbar-item tag="g-link" :to="{ path: '/' }">Home</b-navbar-item>
         <b-navbar-item tag="g-link" :to="{ path: '/photos' }">Photos</b-navbar-item>
         <b-navbar-item tag="g-link" :to="{ path: '/recipes' }">Recipes</b-navbar-item>
