@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="pager">
-          <Pagination :ressourceName="recipes" :perPage="9" />
+          <Pagination :ressourceName="'recipes'" :perPage="3" />
         </div>
       </div>
     </section>
@@ -42,7 +42,7 @@ export default {
 
 <page-query>
 query ($page: Int) {
-  recipes: allRecipe(perPage: 9, page: $page) @paginate {
+  recipes: allRecipe(perPage: 3, page: $page) @paginate {
     totalCount
     pageInfo {
       totalPages
