@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="hero is-fullheight">
+    <section class="hero is-fullheight-with-navbar">
       <div class="hero-body">
         <div class="container">
           <figure>
@@ -16,7 +16,7 @@
       </div>
     </section>
 
-    <section class="hero is-fullheight">
+    <section class="hero is-fullheight-with-navbar">
       <div class="hero-body">
         <div class="container">
           <div class="columns is-centered">

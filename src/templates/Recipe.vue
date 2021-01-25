@@ -9,7 +9,9 @@
           <!-- <p class="title is-1 has-text-weight-bold has-text-centered">{{ $page.recipe.name }}</p> -->
           <div class="columns is-centered is-vcentered">
             <div class="column is-5">
-              <h1 class="title is-1 has-text-weight-semibold">{{ $page.recipe.name }}</h1>
+              <h1 class="title is-1 has-text-weight-semibold">
+                {{ $page.recipe.name }}
+              </h1>
               <h2 class="subtitle is-3">Japan</h2>
             </div>
             <div class="column is-7 has-text-centered">
@@ -23,40 +25,41 @@
               <img :src="$page.recipe.image" />
             </div> -->
             <div class="column is-10">
-                <div class="block">
-                  <p class="title is-4 has-text-weight-bold">Ingredients</p>
-                </div>
-                <div class="icon-and-text">
-                  <p class="has-text-weight-semibold">For {{ amount }} {{ $page.recipe.amount.unit }}</p>
-                  <a v-on:click="amount = Math.max(1, amount - 1)">
-                    <b-icon icon="minus-circle" size="is-small"> </b-icon>
-                  </a>
-                  <a v-on:click="amount += 1">
-                    <b-icon icon="plus-circle" size="is-small"> </b-icon>
-                  </a>
-                </div>
-                <div class="content">
-                  <ul>
-                    <li
-                      v-for="(ingredient, i) in $page.recipe.ingredients"
-                      :key="i"
-                    >
-                      {{ ingredient.name }} :
-                      {{ scaleQuantity(ingredient.quantity) }}
-                      {{ ingredient.unit }}
-                    </li>
-                    <!-- here is no amout ingredients -->
-                    <li
-                      v-for="(ingredient, i) in $page.recipe.otherIngredients"
-                      :key="i"
-                    >
-                      {{ ingredient.name }}
-                    </li>
-                  </ul>
-                </div>
+              <div class="block">
+                <p class="title is-4 has-text-weight-bold">Ingredients</p>
+              </div>
+              <div class="icon-and-text">
+                <p class="has-text-weight-semibold">For</p>
+                <b-field>
+                  <b-numberinput
+                    v-model="amount"
+                    size="is-small"
+                    min="1"
+                  ></b-numberinput>
+                </b-field>
+                <p>{{ $page.recipe.amount.unit }}</p>
+              </div>
+              <div class="content">
+                <ul>
+                  <li
+                    v-for="(ingredient, i) in $page.recipe.ingredients"
+                    :key="i"
+                  >
+                    {{ ingredient.name }} :
+                    {{ scaleQuantity(ingredient.quantity) }}
+                    {{ ingredient.unit }}
+                  </li>
+                  <!-- here is no amout ingredients -->
+                  <li
+                    v-for="(ingredient, i) in $page.recipe.otherIngredients"
+                    :key="i"
+                  >
+                    {{ ingredient.name }}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          
 
           <div class="columns is-centered">
             <div class="column is-10">
