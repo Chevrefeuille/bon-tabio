@@ -1,7 +1,7 @@
 name: test
 image: /uploads/tonkatsu.jpg
 amount:
-  quantity: 2
+  quantity: 3
   unit: person/people
 ingredients:
   - name: onion
