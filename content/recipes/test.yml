@@ -1,0 +1,11 @@
+name: test
+image: /uploads/tonkatsu.jpg
+amount:
+  quantity: 2
+  unit: person/people
+ingredients:
+  - name: onion
+    quantity: 1
+steps:
+  - name: aaa
+    action: aaaaa
