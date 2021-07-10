@@ -33,7 +33,13 @@ collections:
         fields:
         - {label: Name, name: "name", widget: string, default }
         - {label: Quantity, name: "quantity", widget: number }
-        - {label: Unit, name: "unit", widget: string }
+        - {label: Unit, name: "unit", widget: string, optional: true }
+      - label: "Other ingredients"
+        name: "otherIngredients"
+        widget: "list"
+        i18n: true
+        fields:
+        - {label: Name, name: "name", widget: string, default }
       - label: "Steps"
         name: "steps"
         widget: "list"
