@@ -1,5 +1,15 @@
 <template>
   <Layout>
+    <section class="hero is-medium is-primary">
+      <div class="hero-body">
+        <p class="title">
+          Medium hero
+        </p>
+        <p class="subtitle">
+          Medium subtitle
+        </p>
+      </div>
+    </section>
     <section class="section">
       <div class="container">
         <div class="columns is-multiline">

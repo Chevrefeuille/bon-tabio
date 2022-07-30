@@ -1,23 +1,29 @@
 <template>
+<div>
   <g-link :to="recipePath">
     <div class="box">
       <div class="card">
         <div class="card-image">
-          <figure class="image is-3by2 is-hidden-mobile">
+          <figure class="image is-1by1 is-hidden-mobile">
             <img :src="recipeImage" />
           </figure>
         </div>
-        <div class="card-content">
+        
+        <!-- <div class="card-content">
           <div class="content">
             <p class="title is-4 is-italic recipe-title has-text-centered has-text-weight-bold">
             {{ recipeName }}
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
+    
   </g-link>
-
+  <div class="is-4 is-italic block">
+      {{ recipeName }}
+  </div>
+</div>
   <!-- <article class="recipe-card-container">
     <g-link :to="recipePath">
       <div class="box">
@@ -60,7 +66,7 @@ export default {
   position: relative;
   overflow: hidden;
   padding: 0 0 0 0;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 // .recipe-info {
